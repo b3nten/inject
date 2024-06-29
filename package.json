@@ -1,0 +1,29 @@
+{
+	"name": "@benstack/inject",
+	"description": "Lightweight DI for Javascript",
+	"version": "0.0.1",
+	"publishConfig": {
+		"access": "public"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "concurrently \"node build --dev\" \"cd playground && pnpm dev\"",
+		"build": "node build",
+		"lint": "biome format . --write"
+	},
+	"files": [
+		"build"
+	],
+	"exports": {
+		".": {
+			"import": "./build/mod.js",
+			"types": "./build/mod.d.ts"
+		}
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.6.4",
+		"concurrently": "^8.2.2",
+		"esbuild": "^0.21.4",
+		"esbuild-plugin-d.ts": "^1.2.3"
+	}
+}
